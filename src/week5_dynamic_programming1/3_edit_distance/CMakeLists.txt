@@ -1,0 +1,2 @@
+add_executable(edit_distance edit_distance.cpp)
+target_link_libraries(edit_distance gtest)

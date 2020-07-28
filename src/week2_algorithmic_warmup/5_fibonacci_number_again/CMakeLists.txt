@@ -1,0 +1,2 @@
+add_executable(fibonacci_huge fibonacci_huge.cpp)
+target_link_libraries(fibonacci_huge gtest)

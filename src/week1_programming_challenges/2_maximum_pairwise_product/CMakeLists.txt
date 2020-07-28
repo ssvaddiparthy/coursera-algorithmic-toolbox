@@ -1,0 +1,2 @@
+add_executable(max_pairwise_product max_pairwise_product.cpp)
+target_link_libraries(max_pairwise_product gtest)

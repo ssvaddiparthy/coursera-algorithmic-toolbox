@@ -1,0 +1,2 @@
+add_executable(fractional_knapsack fractional_knapsack.cpp)
+target_link_libraries(fractional_knapsack gtest)

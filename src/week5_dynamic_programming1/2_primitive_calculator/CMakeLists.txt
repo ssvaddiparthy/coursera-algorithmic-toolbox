@@ -1,0 +1,2 @@
+add_executable(primitive_calculator primitive_calculator.cpp)
+target_link_libraries(primitive_calculator gtest)

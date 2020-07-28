@@ -1,0 +1,2 @@
+add_executable(majority_element majority_element.cpp)
+target_link_libraries(majority_element gtest)

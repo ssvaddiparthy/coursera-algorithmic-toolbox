@@ -1,0 +1,2 @@
+add_executable(largest_number largest_number)
+target_link_libraries(largest_number gtest)

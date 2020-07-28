@@ -1,0 +1,2 @@
+add_executable(fibonacci_sum_last_digit fibonacci_sum_last_digit.cpp)
+target_link_libraries(fibonacci_sum_last_digit gtest)
