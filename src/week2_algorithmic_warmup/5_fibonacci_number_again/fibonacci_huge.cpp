@@ -1,19 +1,33 @@
 #include <iostream>
 
+long long get_pisano(long long m) {
+    long a = 0, b = 1;
+    for (int i = 0; i < m*m; ++i) {
+        long temp = a;
+        a = b;
+        b = (temp+b)%m;
+        if (a == 0 && b == 1) {
+            return i + 1;
+        }
+    }
+}
+
 long long get_fibonacci_huge_naive(long long n, long long m) {
-    if (n <= 1)
+    long long pis_num = get_pisano(m);
+
+    n = n % pis_num;
+    if (n == 0 || n ==1) {
         return n;
-
-    long long previous = 0;
-    long long current  = 1;
-
-    for (long long i = 0; i < n - 1; ++i) {
-        long long tmp_previous = previous;
-        previous = current;
-        current = tmp_previous + current;
     }
 
-    return current % m;
+    int prev = 0, cur = 1, res = prev+cur;
+    for (int i = 1; i < n-1; ++i) {
+        res = prev + cur;
+        prev = cur;
+        cur = res;
+    }
+
+
 }
 
 int main() {
