@@ -18,26 +18,8 @@ int fibonacci_sum_naive(long long n) {
     return sum % 10;
 }
 
-int fibonacci_sum_fast(long long n) {
-    // Fibonacci mods repeat for 60
-    n = n % 60;
-    if ( n == 0 || n == 1){
-        return n;
-    }
-
-    int a = 0, b = 1, res = 0;
-    int sum = 1;
-    for (int i = 2; i <= n; ++i) {
-        res = a+b;
-        a = b;
-        b = res;
-        sum += res;
-    }
-    return sum % 10;
-}
-
 int main() {
     long long n = 0;
     std::cin >> n;
-    std::cout << fibonacci_sum_fast(n);
+    std::cout << fibonacci_sum_naive(n);
 }
