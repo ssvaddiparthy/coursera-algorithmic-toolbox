@@ -1,14 +1,32 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <map>
 
 using std::vector;
 
 double get_optimal_value(int capacity, vector<int> weights, vector<int> values) {
-  double value = 0.0;
+    double value = 0.0;
+    std::map<double, int, std::greater<double>> perUnit;
 
-  // write your code here
+    for (int i = 0; i < weights.size(); ++i) {
+        perUnit[(double) values[i] / weights[i]] = i;
+    }
 
-  return value;
+    for (auto ele: perUnit) {
+        if (capacity == 0)
+            return value;
+        if (capacity >= weights[ele.second]){
+            capacity -= weights[ele.second];
+            weights[ele.second] = 0;
+            value += values[ele.second];
+        } else {
+            value += ele.first*capacity;
+            capacity = 0;
+        }
+    }
+
+    return value;
 }
 
 int main() {
