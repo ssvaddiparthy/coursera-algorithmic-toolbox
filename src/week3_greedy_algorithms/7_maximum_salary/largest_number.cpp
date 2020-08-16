@@ -7,13 +7,13 @@
 using std::vector;
 using std::string;
 
-int combine(string s1, string s2) {
-    string s1s2, s2s1;
+int combine(string X, string Y) {
+    string XY, YX;
 
-    s1s2 = s1 + s2;
-    s2s1 = s2 + s1;
+    XY = X.append(Y);
+    YX = Y.append(X);
 
-    return s1s2 >= s2s1 ? 0 : 1;
+    return XY.compare(YX) > 0 ? 1 : 0;
 }
 
 string largest_number(vector<string> a) {
